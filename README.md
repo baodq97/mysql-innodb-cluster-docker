@@ -18,6 +18,7 @@ https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-innodb-cluster.html
 if deploy same vm need change port. --port and --mysqlx-port. and binding ports.
 
 ## Config Cluster using mysqlsh (Mysql Shell).
+```sh
 ssh to node1.
 docker exec -it [container-mysql-server-cluster] mysqlsh
 var dbPass = "mysql";
@@ -37,6 +38,6 @@ var cluster = dba.createCluster(clusterName);
 
 cluster.addInstance({user: "root", host: "node2", port:3306, password: dbPass});
 cluster.addInstance({user: "root", host: "node3", port:3306, password: dbPass});
-
+```
 ## After config success connect to mysql route.
   Mysql router will be route write acction to primary.
